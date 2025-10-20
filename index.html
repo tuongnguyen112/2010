@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trái Tim </title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffd6e0, #ffc2d1);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      transition: opacity 1s;
+    }
+
+    .container {
+      text-align: center;
+      z-index: 10;
+    }
+
+    .heart-container {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      margin: 0 auto 25px;
+    }
+
+    .heart {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      transition: transform 0.25s ease;
+    }
+
+    .heart:active {
+      transform: scale(0.93);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.3));
+    }
+
+    .heart-outline {
+      fill: none;
+      stroke: #ff4d6d;
+      stroke-width: 5;
+    }
+
+    .heart-fill {
+      fill: #ff4d6d;
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+      transition: clip-path 0.6s cubic-bezier(0.42, 0, 0.2, 1);
+    }
+
+    .instructions {
+      color: #b5174d;
+      font-size: 17px;
+      font-weight: 500;
+      margin-top: 25px;
+    }
+
+    .completion-message {
+      font-size: 22px;
+      color: #c9184a;
+      font-weight: bold;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    /* Bong bóng thoại 💬 */
+    .speech-bubble {
+      position: absolute;
+      left: -90px; /* nằm bên trái tim */
+      top: 50%;
+      transform: translateY(-50%) scale(0.8);
+      background: #fff;
+      color: #c9184a;
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      white-space: nowrap;
+      opacity: 0;
+      animation: appearAndFade 0.5s ease forwards;
+    }
+
+    .speech-bubble::after {
+      content: "";
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-width: 6px;
+      border-style: solid;
+      border-color: transparent transparent transparent #fff;
+    }
+
+    @keyframes appearAndFade {
+      0% {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.8);
+      }
+      20% {
+        opacity: 1;
+        transform: translateY(-55%) scale(1);
+      }
+      80% {
+        opacity: 1;
+        transform: translateY(-60%) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-65%) scale(0.9);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heart-container">
+      <div class="heart" id="heart">
+        <svg viewBox="0 0 512 512">
+          <path class="heart-outline" d="M256 464l-16-14C118 338 32 262 32 168 32 99.7 87.7 44 156 44c35.8 0 70.6 16.2 100 44.8C285.4 60.2 320.2 44 356 44c68.3 0 124 55.7 124 124 0 94-86 170-208 282l-16 14z"/>
+          <path class="heart-fill" d="M256 464l-16-14C118 338 32 262 32 168 32 99.7 87.7 44 156 44c35.8 0 70.6 16.2 100 44.8C285.4 60.2 320.2 44 356 44c68.3 0 124 55.7 124 124 0 94-86 170-208 282l-16 14z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="instructions">Nhấp vào trái tim điii</div>
+    <div class="completion-message" id="completionMessage">chuẩn bị típ thôi</div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const heart = document.getElementById('heart');
+      const heartFill = document.querySelector('.heart-fill');
+      const message = document.getElementById('completionMessage');
+      const container = document.querySelector('.heart-container');
+
+      let count = 0;
+      const max = 10;
+      const messages = [
+        "Hehe ",
+        "đừng cười nhaa",
+        "bấm típ đi đừng có cười nữa:)) ",
+        "Tim đầy thêm chút nữa ",
+        "xíu nữa sắp xg ròi",
+        "xíu xiu nữa thôi",
+        "cố lên bạn oiii",
+        "chuẩn bị ròi",
+        "20/10 vui vẻ nhá ",
+        "chuyển hướng thôi "
+      ];
+
+      heart.addEventListener('click', () => {
+        if (count >= max) return;
+        count++;
+
+        // Cập nhật độ đầy tim
+        const percent = (count / max) * 100;
+        heartFill.style.clipPath = `polygon(0 ${100 - percent}%, 100% ${100 - percent}%, 100% 100%, 0 100%)`;
+
+        // Tạo bong bóng thoại 💬
+        const bubble = document.createElement('div');
+        bubble.className = 'speech-bubble';
+        bubble.textContent = messages[count - 1] || "💬";
+        container.appendChild(bubble);
+
+        // Tự xóa bong bóng sau 0.5s
+        setTimeout(() => bubble.remove(), 500);
+
+        // Nếu đầy tim
+        if (count === max) {
+          message.style.opacity = '1';
+          setTimeout(() => {
+            document.body.style.opacity = '0';
+            setTimeout(() => window.location.href = 'index3.html', 1000);
+          }, 1500);
+        }
+      });
+    });
+  </script>
+    <script src="main.js"></script>
+</body>
+</html>

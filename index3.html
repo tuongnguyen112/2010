@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <title>Quà 20/10 - Ngày Phụ nữ Việt Nam</title>
+    <meta name="description" content="Trang quà tặng 20/10 dành cho Ngày Phụ nữ Việt Nam: mở hộp quà, đọc thư yêu thương và xem ảnh quà kèm nhạc nền.">
+    <!-- Open Graph for Facebook -->
+    <meta property="og:title" content="Quà 20/10 - Ngày Phụ nữ Việt Nam">
+    <meta property="og:description" content="Mở hộp quà, đọc thư yêu thương và xem ảnh quà kèm nhạc nền. Chúc mừng Ngày Phụ nữ Việt Nam 20/10!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="index.html">
+    <meta property="og:image" content="giftimage.png">
+    <meta property="og:image:alt" content="Quà 20/10 - Ngày Phụ nữ Việt Nam">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quà 20/10 - Ngày Phụ nữ Việt Nam">
+    <meta name="twitter:description" content="Mở hộp quà, đọc thư yêu thương và xem ảnh quà kèm nhạc nền.">
+    <meta name="twitter:image" content="giftimage.png">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.min.css" integrity="sha512-JQksK36WdRekVrvdxNyV3B0Q1huqbTkIQNbz1dlcFVgNynEMRl0F8OSqOGdVppLUDIvsOejhr/W5L3G/b3J+8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ảnh nền -->
+    <img src="image/bg.png" alt="Ảnh nền" class="background-image">
+
+    <!-- Ảnh ở góc dưới trái -->
+    <img src="image/b3.png" alt="Ảnh b3" class="corner-image bottom-left">
+    <img src="image/b3.png" alt="Ảnh b3" class="corner-image bottom-left-right">
+    <!-- Ảnh ở góc dưới phải -->
+    <img src="image/b4.png" alt="Ảnh b4" class="corner-image-right bottom-right">
+    <!-- Ảnh trái tim -->
+    <img src="image/b6.png" alt="Ảnh b6" class="heart1">
+    <img src="image/b5.png" alt="Ảnh b5" class="heart2">
+
+    <h1 class="headline">Chúc mừng Ngày Phụ nữ Việt Nam!</h1>
+
+    <!-- SCENE PHONG THƯ: ẩn sẵn, chỉ hiển thị sau khi mở hộp quà -->
+    <div id="letterScene">
+        <svg id="theSvg" viewBox="-120 -30 240 180" enable-background="new 0 0 174 148" xml:space="preserve">
+            <defs>
+                <filter id="f" filterUnits="userSpaceOnUse" x="-120" y="-30" width="120%" height="120%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"></feGaussianBlur>
+                    <feOffset in="blur" dx="3" dy="5" result="shadow"></feOffset>
+                    <feFlood flood-color="rgba(3,0,0,1)" result="color" />
+                    <feComposite in="color" in2="shadow" operator="in" />
+                    <feComposite in="SourceGraphic" />
+                </filter>
+                <path id="shape" d="M0, 21.054 
+       C0, 21.054 24.618, -15.165 60.750, 8.554 
+       C93.249, 29.888 57.749, 96.888 0, 117.388
+       C-57.749, 96.888  -93.249, 29.888 -60.750, 8.554
+       C-24.618, -15.165  -0, 21.054 -0, 21.054z    
+    " />
+                <path id="partialPath" />
+            </defs>
+            <text dy="-2">
+                <textPath style="font-family: fantasy;" xlink:href="#partialPath" startOffset="12">
+                    ............... 🌹Chúc Mừng Ngày 
+                    🌹......................................................................
+                    🌹Phụ Nữ Việt Nam!🌹..............................................
+                    .................
+                   
+                </textPath>
+            </text>
+            <use id="useThePath" xlink:href="#partialPath" stroke="white" stroke-width=".5" stroke-opacity=".5" fill="none" style="display:none;" />
+        </svg>
+
+        <div id="castle">
+            <div class="letter">
+                <div class="valentines">
+                    <div class="envelope"></div>
+                    <div class="front"></div>
+                    <div class="card">
+                        <div class="text">Happy<br>Women's<br>Day!</div>
+                        <div class="heart"></div>
+                    </div>
+                    <div class="hearts">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                        <div class="four"></div>
+                        <div class="five"></div>
+                    </div>
+                </div>
+                <div class="shadow"></div>
+            </div>
+        </div>
+
+        <div class="wrapperLetterForm">
+            <div class="boxLetter">
+                <i class="fa-solid fa-xmark"></i>
+                <div class="formLetter">
+                    <div class="heartLetter">
+                        <div class="heartLetterItem"></div>
+                    </div>
+                    <div class="heartLetter">
+                        <div class="heartLetterItem"></div>
+                    </div>
+                    <div class="wrapperLetter">
+                        <div class="giftbox">
+                            <div class="img">
+                                <img src="./image/giftbox.png" alt="Giftbox">
+                            </div>
+                        </div>
+                        <div class="textLetter">
+                            <h2></h2>
+                            <p class="contentLetter"></p>
+                            <a>:</a>
+                            <div class="heartAnimation">
+                                <img src="./image/heartAnimation.gif" alt="Heart Animation">
+                            </div>
+                           
+                            <button class="letterNextBtn"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <div class="mewmew1">
+                            <img src="./image/mewmew.gif" alt="Mewmew 1">
+                        </div>
+                        <div class="mewmew2">
+                            <img src="./image/mewmew.gif" alt="Mewmew 2">
+                        </div>
+                    </div>
+                </div>
+                <div class="before"></div>
+            </div>
+        </div>
+        <audio src="snaptik.vn_X9q7D.mp3" autoplay></audio>
+    </div>
+
+    <!-- Lớp phủ hiển thị ảnh quà -->
+    <div id="giftOverlay">
+        <img src="./image/Screenshot 2025-10-19 090829.png" alt="Quà">
+        <!-- Animations phủ lên ảnh quà -->
+        <img class="anim heartBottom" src="image/heartAnimation.gif" alt="heart animation">
+        <img class="anim traiTimTop" src="image/giftraitim.gif" alt="gif trái tim">
+        <div class="caption" id="giftCaption"></div>
+    </div>
+    <!-- hộp quà-->
+    <div class="boxgift" id="giftBox">
+     <img src="image/nap.png" alt="Nắp hộp" class="box-gift lid">
+     <img src="image/hop.png" alt="Thân hộp" class="box-gift base">
+        </div>
+
+
+    <script src="./detect-devtools.js"></script>
+    <script type='text/javascript'>
+        // Bypass for developers
+        const keyName = 'key';
+        const keyValue = '9ac7ec230e0e4513578f309d6d3579ad';
+
+        // Handle via config
+        DisableDevtool({
+            tkName: keyName,
+            md5: keyValue,
+            interval: '100',
+        });
+    </script>
+
+    <script>
+        let indexTextContent = 0;
+        let textLetterContent = document.querySelector('.contentLetter');
+        const textLetterP = "Nhân ngày 20/10 tháng thì mình chúc các bạn nữ và các người mẹ lun vui vẻ hạnh phúc và dể tính xíu cho tụi con trai mik sống lâu :)))) ờ thì có thế thui 20/10 VUI VẺ NHÓ";
+        let timeoutTextLetterContent;
+
+        function textCharLetterContent() {
+            if (indexTextContent < textLetterP.length) {
+                textLetterContent.textContent += textLetterP[indexTextContent];
+                indexTextContent++;
+                timeoutTextLetterContent = setTimeout(textCharLetterContent, 100);
+            } else {
+                clearTimeout(timeoutTextLetterContent);
+            }
+        }
+
+        window.addEventListener('load', function () {
+            document.body.classList.add('is-loaded');
+        });
+
+        (function () {
+            const box = document.getElementById('giftBox');
+            if (!box) {
+                console.error('Gift box not found');
+                return;
+            }
+            let opened = false;
+
+            function openBox() {
+                if (opened) return;
+                opened = true;
+                box.classList.add('open');
+
+                const audio = document.querySelector('audio');
+                if (audio) {
+                    try {
+                        audio.volume = 0.6;
+                        audio.play().catch(() => console.error('Error playing audio'));
+                    } catch (e) {
+                        console.error('Audio error:', e);
+                    }
+                }
+
+                setTimeout(function () {
+                    document.body.classList.add('hide-ui');
+                    const scene = document.getElementById('letterScene');
+                    if (scene) {
+                        scene.style.display = 'flex';
+                        initLetterScene();
+                    } else {
+                        console.error('letterScene not found');
+                    }
+                }, 1000);
+            }
+
+            box.addEventListener('click', openBox, { passive: true });
+            box.addEventListener('pointerdown', openBox, { passive: true });
+            box.addEventListener('touchstart', openBox, { passive: true });
+        })();
+
+        (function () {
+            function isMobile() {
+                return /Mobi|Android|iPad|iPhone|iPod/i.test(navigator.userAgent);
+            }
+            if (!isMobile()) return;
+
+            document.addEventListener('gesturestart', (e) => e.preventDefault(), { passive: false });
+            document.addEventListener('gesturechange', (e) => e.preventDefault(), { passive: false });
+            document.addEventListener('gestureend', (e) => e.preventDefault(), { passive: false });
+            document.addEventListener('wheel', (e) => { if (e.ctrlKey) e.preventDefault(); }, { passive: false });
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', (e) => {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) e.preventDefault();
+                lastTouchEnd = now;
+            }, { passive: false });
+            document.addEventListener('touchmove', (e) => {
+                if (e.touches && e.touches.length > 1) e.preventDefault();
+            }, { passive: false });
+        })();
+
+        function initLetterScene() {
+            try {
+                const SVG_NS = 'http://www.w3.org/2000/svg';
+                const shape = document.getElementById('shape');
+                const partialPath = document.getElementById('partialPath');
+                const theSvg = document.getElementById('theSvg');
+                if (!shape || !partialPath || !theSvg) {
+                    console.error('SVG elements not found:', { shape, partialPath, theSvg });
+                } else {
+                    let rid = null;
+                    const pathlength = shape.getTotalLength();
+                    let t = 0;
+                    const d = shape.getAttribute('d');
+                    const n = (d.match(/C/gi) || []).length;
+                    let pos = 0;
+                    const subpaths = [];
+
+                    class SubPath {
+                        constructor(sd) {
+                            this.d = sd;
+                            this.getPoints();
+                            this.previous = subpaths.length > 0 ? subpaths[subpaths.length - 1] : null;
+                            this.measurePath();
+                            this.getMovePoint();
+                            this.getLastCubicBezier();
+                        }
+                        getPoints() {
+                            this.pointsRy = this.d.split(/[A-Z,a-z\s,]/).filter(Boolean).map(Number);
+                        }
+                        measurePath() {
+                            const p = document.createElementNS(SVG_NS, 'path');
+                            p.setAttributeNS(null, 'd', this.d);
+                            this.pathLength = p.getTotalLength();
+                        }
+                        getMovePoint() {
+                            if (this.previous) {
+                                const p = this.previous.pointsRy;
+                                this.M_point = [p[p.length - 2], p[p.length - 1]];
+                            } else {
+                                const p = this.pointsRy;
+                                this.M_point = [p[0], p[1]];
+                            }
+                        }
+                        getLastCubicBezier() {
+                            const lastIndexOfC = this.d.lastIndexOf('C');
+                            const temp = this.d.substring(lastIndexOfC + 1).split(/[\s,]/).filter(Boolean).map(Number);
+                            this.lastCubicBezier = [this.M_point];
+                            for (let i = 0; i < temp.length; i += 2) this.lastCubicBezier.push(temp.slice(i, i + 2));
+                        }
+                    }
+
+                    for (let i = 0; i < n; i++) {
+                        const newpos = d.indexOf('C', pos + 1);
+                        if (i > 0) subpaths.push(new SubPath(d.substring(0, newpos)));
+                        pos = newpos;
+                    }
+                    subpaths.push(new SubPath(d));
+
+                    let index = 0;
+                    function get_T(tt, idx) {
+                        const lengthAtT = pathlength * tt;
+                        return idx > 0
+                            ? (lengthAtT - subpaths[idx].previous.pathLength) /
+                              (subpaths[idx].pathLength - subpaths[idx].previous.pathLength)
+                            : lengthAtT / subpaths[idx].pathLength;
+                    }
+
+                    function lerp(A, B, tt) {
+                        return [(B[0] - A[0]) * tt + A[0], (B[1] - A[1]) * tt + A[1]];
+                    }
+
+                    function getBezierPoints(tt, points) {
+                        const helper = [
+                            lerp(points[0], points[1], tt),
+                            lerp(points[1], points[2], tt),
+                            lerp(points[2], points[3], tt),
+                        ];
+                        const mid1 = lerp(helper[0], helper[1], tt);
+                        const mid2 = lerp(helper[1], helper[2], tt);
+                        const final = lerp(mid1, mid2, tt);
+                        return [points[0], helper[0], mid1, final];
+                    }
+
+                    function drawCBezier(points) {
+                        let dd = index > 0 ? subpaths[index].previous.d : `M${points[0][0]},${points[0][1]} C`;
+                        for (let i = 1; i < 4; i++) dd += ` ${points[i][0]},${points[i][1]} `;
+                        partialPath.setAttributeNS(null, 'd', dd);
+                    }
+
+                    theSvg.style.display = 'inherit';
+
+                    function Typing() {
+                        rid = requestAnimationFrame(Typing);
+                        if (t >= 1) cancelAnimationFrame(rid);
+                        else t += 0.0025;
+                        const lengthAtT = pathlength * t;
+                        for (index = 0; index < subpaths.length; index++)
+                            if (subpaths[index].pathLength >= lengthAtT) break;
+                        const T = get_T(t, index);
+                        const newPoints = getBezierPoints(T, subpaths[index].lastCubicBezier);
+                        drawCBezier(newPoints);
+                    }
+                    rid = requestAnimationFrame(Typing);
+                }
+
+                const textLetter = document.querySelector('#letterScene .textLetter h2');
+                let indexText = 0;
+                window.textLetterH2 = "20/10!";
+                window.textLetterP = "Nhân ngày 20/10 tháng thì mình chúc các bạn nữ và các người mẹ lun vui vẻ hạnh phúc và dể tính xíu cho tụi con trai mik sống lâu :)))) ờ thì có thế thui 20/10 VUI VẺ NHÓ";
+
+                function textCharLetter() {
+                    if (indexText < window.textLetterH2.length) {
+                        textLetter.textContent += window.textLetterH2[indexText++];
+                        setTimeout(textCharLetter, 500);
+                    } else {
+                        setTimeout(textCharLetterContent, 500);
+                    }
+                }
+
+                function funcTimeoutLetter() {
+                    indexText = 0;
+                    textLetter.textContent = '';
+                    setTimeout(textCharLetter, 100);
+                }
+
+                function funcTimeoutLetterContent() {
+                    indexTextContent = 0;
+                    textLetterContent.textContent = '';
+                    setTimeout(textCharLetterContent, 100);
+                }
+
+                const $ = window.jQuery;
+                if ($) {
+                    $('.valentines')
+                        .off('mouseenter mouseleave')
+                        .on('mouseenter', function () {
+                            $('.card').stop().animate({ top: '-90px' }, 'slow');
+                        })
+                        .on('mouseleave', function () {
+                            $('.card').stop().animate({ top: 0 }, 'slow');
+                        });
+
+                    $('.card')
+                        .off('click')
+                        .on('click', function () {
+                            console.log('Card clicked!');
+                            $('.wrapperLetterForm').fadeIn();
+                            if (window.textLetterH2 && window.textLetterP) {
+                                funcTimeoutLetter();
+                            }
+                        });
+
+                    $('.letterNextBtn')
+                        .off('click')
+                        .on('click', function () {
+                            console.log('Next button clicked!');
+                            $('.wrapperLetterForm').hide();
+                            document.body.classList.add('final-hide');
+                            const overlay = document.getElementById('giftOverlay');
+                            if (overlay) {
+                                overlay.classList.add('show');
+                                const capEl = document.getElementById('giftCaption');
+                                const txt = (window.captionImage || '20/10 vui vẻ nhó').trim();
+                                if (capEl) {
+                                    capEl.textContent = '';
+                                    if (txt.length > 0) {
+                                        let i = 0;
+                                        (function type() {
+                                            if (i < txt.length) {
+                                                capEl.textContent += txt.charAt(i++);
+                                                setTimeout(type, 40);
+                                            }
+                                        })();
+                                    } else {
+                                        capEl.style.display = 'none';
+                                    }
+                                }
+                            }
+                        });
+
+                    $('.fa-xmark')
+                        .off('click')
+                        .on('click', function () {
+                            console.log('Close button clicked!');
+                            $('.wrapperLetterForm').hide();
+                            const audio = document.querySelector('audio');
+                            if (audio) {
+                                audio.pause();
+                                audio.currentTime = 0;
+                            }
+                        });
+                } else {
+                    console.error('jQuery not loaded');
+                }
+
+                const head = document.head;
+                let animationId = 1;
+                function CreateMagicDust(x1, x2, y1, y2, sizeRatio, fallingTime, animationDelay, node = 'castle') {
+                    const dust = document.createElement('span');
+                    const animation = document.createElement('style');
+                    animation.innerHTML = `@keyframes blink${animationId}{0%{top:${y1}px;left:${x1}px;width:${2 *
+                        sizeRatio}px;height:${2 * sizeRatio}px;opacity:.4}20%{width:${4 *
+                        sizeRatio}px;height:${4 * sizeRatio}px;opacity:.8}35%{width:${2 *
+                        sizeRatio}px;height:${2 * sizeRatio}px;opacity:.5}55%{width:${3 *
+                        sizeRatio}px;height:${3 * sizeRatio}px;opacity:.7}80%{width:${sizeRatio}px;height:${sizeRatio}px;opacity:.3}100%{top:${y2}px;left:${x2}px;width:0;height:0;opacity:.1}}`;
+                    head.appendChild(animation);
+                    dust.classList.add('dustDef');
+                    dust.style.animation = `blink${animationId++} ${fallingTime}s cubic-bezier(.71,.11,.68,.83) infinite ${animationDelay}s`;
+                    const parent = document.getElementById(node) || document.getElementById('letterScene');
+                    parent && parent.appendChild(dust);
+                }
+
+                [
+                    [130, 132, 150, 152, 0.15, 2.5, 0.1, 'castle'],
+                    [65, 63, 300, 299, 0.5, 2, 0.2, 'castle'],
+                    [70, 70, 150, 150, 0.45, 2, 0.5],
+                    [75, 78, 160, 170, 0.6, 2, 1],
+                    [80, 82, 160, 180, 0.6, 1, 0.4],
+                    [85, 100, 160, 170, 0.5, 2, 0.5],
+                    [125, 110, 170, 180, 0.25, 3, 1.5],
+                    [90, 90, 115, 115, 0.4, 2, 2],
+                    [93, 95, 200, 200, 0.4, 3, 1.5],
+                    [100, 100, 145, 155, 0.45, 1, 0.5],
+                    [100, 90, 170, 230, 0.35, 2, 0.75],
+                    [100, 102, 115, 112, 0.35, 3, 0.25],
+                    [100, 95, 170, 200, 0.55, 1.5, 0.75],
+                    [100, 97, 150, 190, 0.7, 2, 1.5],
+                    [105, 100, 160, 180, 0.5, 1.5, 0.725],
+                    [125, 125, 180, 190, 0.25, 1, 0.725],
+                    [130, 130, 135, 135, 0.45, 3, 1.5],
+                    [135, 132, 170, 190, 0.25, 2.5, 0.75],
+                    [135, 132, 320, 315, 0.2, 5, 0.3, 'castle'],
+                ].forEach((o) => CreateMagicDust(...o));
+            } catch (err) {
+                console.error('initLetterScene error:', err);
+            }
+        }
+    </script>
+    <script src="main.js"></script> 
+</body>
+
+</html>
+
+
+
